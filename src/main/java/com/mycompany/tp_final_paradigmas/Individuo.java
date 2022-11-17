@@ -25,4 +25,9 @@ public class Individuo {
         this.peso = peso;
         this.dire=dire; 
     }
+    public Individuo(int dni){
+    
+    this.dni=dni;
+    
+    }
 }

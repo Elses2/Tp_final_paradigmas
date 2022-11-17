@@ -10,10 +10,31 @@ package com.mycompany.tp_final_paradigmas;
  */
 public class Historial {
     
-    public Internacion internaciones[]= new Internacion[5];
+   /// public Patogeno patogenos[]= new Patogeno[5];
+    public String fecha_consulta; 
+    public String problema;
+   ///
+   /// public Internacion internaciones[]= new Internacion[5];
+    public int dni_medico; 
+    public String fecha_entrada;
+    public String fecha_salida; 
+    public String  motivo; 
+    public Cama cama=new Cama();
+    ////
     public String alergias[]=new String [5];
     public int dni_paciente;/// conexion con el paciente
     public String medicamentos[]=new String[5]; 
     
-
+    public Historial(int dni){
+    
+        dni= dni_paciente ; 
+    }
+    
+    public void Mostrar(){
+            System.out.println("Mostrar: ");
+            
+            
+        
+        }
 }
+

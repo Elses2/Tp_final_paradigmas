@@ -13,6 +13,11 @@ public class Paciente extends Individuo {
     public String problema; /// Problema que tiene el paciente
     
     
+    public Paciente(int dni){
+        super(dni);
+
+    
+    }
     public Paciente(int años, String name, int altura, int peso, String dire, String problema){
         super(años,name,altura,peso,dire);
         this.problema=problema; 
