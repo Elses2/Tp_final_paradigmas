@@ -29,7 +29,9 @@ public class Tp_final_paradigmas {
         for (int i=0; i<20;i++){
             pacientes[i]= new Paciente(0);
         }
-       
+         for (int i=0; i<20;i++){
+            historiales[i]= new Historial(0);
+        }
         int boton=0; 
         int n=2; 
         /// variables de entrada 
@@ -50,10 +52,12 @@ public class Tp_final_paradigmas {
            case 1: 
                System.out.println("Cual es el dni del paciente ingresado? ");
                dni= input.nextInt();
+               input.nextLine();///Para limpiar el buffer
                if (esta_registrado(dni, pacientes) ==false){
                    System.out.println("El paciente no esta registrado registrar");
                    ///registrar paciente
                    
+                   /// Para saber donde almacenar el nuevo paciente
                    for(int i= 0; i<20; i++){
                        if(pacientes[i].dni==0){
                            indicador=i;
@@ -69,6 +73,7 @@ public class Tp_final_paradigmas {
                }
                System.out.println("Cual es el problema del paciente? ");
                problema= input.nextLine();
+               ///input.nextLine(); ///limpiar buffer
                
                
                
@@ -79,11 +84,14 @@ public class Tp_final_paradigmas {
                num= syst.asignar_medico()-1; 
                System.out.println(medicos[num].name);
                 System.out.println("Hola medico: "+ medicos[num].name+"por favor elige entre las siguientes opciones");
+                j=2;/// Cuando se reutilize esta opcion, el valor de j vuelva a ser 2 y se reutilize nuevamente 
                 while(j==2){
                     System.out.println("1:Internar");
                     System.out.println("2:Llenar historial");
                     System.out.println("3:Dar de alta");
                     System.out.println("4:Dejar de atender");
+                    boton= input.nextInt();
+                    input.nextLine();/// Limpiar buffer
                 switch(boton){
                     case 1: 
                         System.out.println("Dime el motivo de internacion: ");
@@ -102,6 +110,7 @@ public class Tp_final_paradigmas {
                         
                         break; 
                     case 4:
+                            j=5;
                             System.out.println("Gracias por su trabajo doctor");
                         break; 
                     default:
